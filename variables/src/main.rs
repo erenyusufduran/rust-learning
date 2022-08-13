@@ -49,8 +49,8 @@ fn main() {
 
     // array --> accessing the elements a[0], a[1]
     let a = [1, 2, 3, 4, 5, 6];
-    let b: [i32; 5] = [1, 2, 3, 4, 5];
-    let c = [3; 5]; // [3,3,3,3,3]
+    let _b: [i32; 5] = [1, 2, 3, 4, 5];
+    let _c = [3; 5]; // [3,3,3,3,3]
 
     // Invalid array element access
 
