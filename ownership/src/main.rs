@@ -11,7 +11,7 @@ fn main() {
     while running the program.    */
 
     let s1 = String::from("hello");
-    let s2 = s1;
+    let _s2 = s1;
     // To ensure memory safety, after the line let s2 = s1, Rust considers s1 as no longer valid.
 
     let st1 = String::from("hello");
