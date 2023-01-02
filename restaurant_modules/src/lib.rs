@@ -1,21 +1,6 @@
 // cargo new restaurant_modules --lib
 
-#[allow(dead_code)]
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {}
-
-        fn seat_at_table() {}
-    }
-
-    mod serving {
-        fn take_order() {}
-
-        fn serve_order() {}
-
-        fn take_payment() {}
-    }
-}
+mod front_of_house;
 
 fn deliver_order() {}
 
@@ -50,6 +35,8 @@ mod back_of_house {
     fn cook_order() {}
 }
 
+use crate::back_of_house::{Appetizer, Breakfast};
+
 #[allow(unused_variables)]
 pub fn eat_at_restaurant() {
     // // Absolute Path
@@ -58,11 +45,13 @@ pub fn eat_at_restaurant() {
     // // Relative Path
     // front_of_house::hosting::add_to_waitlist();
 
-    let mut meal = back_of_house::Breakfast::summer("Rye");
+    let mut meal = Breakfast::summer("Rye");
 
     meal.toast = String::from("Wheat");
     println!("I'd like {} toast please!", meal.toast);
 
-    let order1 = back_of_house::Appetizer::Soup;
-    let order2 = back_of_house::Appetizer::Salad;
+    let order1 = Appetizer::Soup;
+    let order2 = Appetizer::Salad;
+
+    front_of_house::hosting::add_to_waitlist();
 }
